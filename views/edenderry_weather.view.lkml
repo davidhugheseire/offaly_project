@@ -24,6 +24,14 @@ view: edenderry_weather {
     sql: ${TABLE}.date ;;
   }
 
+  dimension: sort {
+    type: number
+    sql: case when ${date_of_reading_month_name} = 'December' then 1
+              when ${date_of_reading_month_name} = 'January' then 2
+              when ${date_of_reading_month_name} = 'February' then 3
+          end;;
+  }
+
   measure: ground_min_temp {
     type: sum
     sql: ${TABLE}.ground_min_temp ;;
@@ -36,9 +44,15 @@ view: edenderry_weather {
     value_format: "0.00"
   }
 
-  measure: avg_temp {
+  measure: avg_daily_max_temp {
     type: average
     sql: ${TABLE}.max_temp ;;
+    value_format: "0.00"
+  }
+
+  measure: avg_daily_mix_temp {
+    type: average
+    sql: ${TABLE}.min_temp ;;
     value_format: "0.00"
   }
 

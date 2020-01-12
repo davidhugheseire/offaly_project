@@ -1,5 +1,5 @@
 view: edenderry_weather {
-  sql_table_name: offaly.edenderry_weather ;;
+  sql_table_name: offaly.offaly_weather ;;
 
   dimension_group: date_of_reading {
     type: time

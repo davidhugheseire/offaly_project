@@ -1,6 +1,6 @@
 connection: "dave_big_query"
 
-include: "/views/offaly_weather.view"
+include: "/views/edenderry_weather.view"
 
 datagroup: offaly_project_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -9,4 +9,4 @@ datagroup: offaly_project_default_datagroup {
 
 persist_with: offaly_project_default_datagroup
 
-explore: offaly_weather {}
+explore: edenderry_weather {}

@@ -1,5 +1,5 @@
-view: offaly_weather {
-  sql_table_name: offaly.offaly_weather ;;
+view: edenderry_weather {
+  sql_table_name: offaly.edenderry_weather ;;
 
   dimension_group: date_of_reading {
     type: time
@@ -27,42 +27,43 @@ view: offaly_weather {
   measure: ground_min_temp {
     type: sum
     sql: ${TABLE}.ground_min_temp ;;
+    value_format: "0.00"
   }
 
-  measure: max_temp {
-    type: sum
+  dimension: max_daily_temp {
+    type: number
     sql: ${TABLE}.max_temp ;;
+    value_format: "0.00"
+  }
+
+  measure: avg_temp {
+    type: average
+    sql: ${TABLE}.max_temp ;;
+    value_format: "0.00"
   }
 
   measure: min_temp {
     type: sum
     sql: ${TABLE}.min_temp ;;
+    value_format: "0.00"
   }
 
   measure: rain {
     type: sum
     sql: ${TABLE}.rain ;;
-    value_format_name: "decimal_2"
+    value_format: "0.00"
   }
 
   measure: soil_temp {
     type: sum
     sql: ${TABLE}.soil_temp ;;
+    value_format: "0.00"
   }
 
   measure: count {
     type: count
     drill_fields: []
   }
-
-#   dimension: latitude {
-#
-#   }
-#   dimension: longitude {}
-#
-#   :53.331
-#   : -7.125
-
 
   dimension : edenderry {
     type: location

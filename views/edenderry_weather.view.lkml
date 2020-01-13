@@ -27,7 +27,7 @@ view: edenderry_weather {
   dimension: sort {
     type: number
     sql: case when ${date_of_reading_month_name} = 'December' then 1
-              when ${date_of_reading_month_name} = 'January' then 2
+              when ${date_of_reading_month_name} = 'January'  then 2
               when ${date_of_reading_month_name} = 'February' then 3
           end;;
   }

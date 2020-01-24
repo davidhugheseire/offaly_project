@@ -50,7 +50,7 @@ view: edenderry_weather {
     value_format: "0.00"
   }
 
-  measure: avg_daily_mix_temp {
+  measure: avg_daily_min_temp {
     type: average
     sql: ${TABLE}.min_temp ;;
     value_format: "0.00"
@@ -66,6 +66,7 @@ view: edenderry_weather {
     type: sum
     sql: ${TABLE}.rain ;;
     value_format: "0.00"
+    drill_fields: [date_of_reading_date,max_daily_temp]
   }
 
   measure: soil_temp {

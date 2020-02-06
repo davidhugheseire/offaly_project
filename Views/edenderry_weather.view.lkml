@@ -40,6 +40,11 @@ view: edenderry_weather {
     sql: ${TABLE}.soil_temp ;;
     value_format: "0.00"
   }
+  dimension: soil_temp_2 {
+    type: number
+    sql: ${TABLE}.soil_temp ;;
+    value_format: "0.00"
+  }
 
   measure: ground_min_temp {
     type: sum
@@ -89,6 +94,7 @@ view: edenderry_weather {
     value_format: "0.00"
     drill_fields: [date_of_reading_date,max_temp]
   }
+
 
 #   measure: avg_daily_max_temp {
 #     type: average
